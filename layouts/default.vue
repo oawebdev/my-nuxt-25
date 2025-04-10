@@ -1,16 +1,37 @@
 <template>
   <div>
-    <nav class="">
-      <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/about">About</NuxtLink>
-      <NuxtLink to="/products">Products</NuxtLink>
-      <NuxtLink to="/products/new">New Products</NuxtLink>
-      <NuxtLink to="/contacts">Contacts</NuxtLink>
-
-    </nav>
+    <UNavigationMenu color="neutral" :items="items" class="w-full" />
     <slot />
   </div>
 </template>
-<style >
 
-</style>
+<script setup lang="ts">
+const items = ref([
+  [
+    {
+      label: 'Home',
+      icon: 'i-ix-about',
+      to: '/'
+    },
+    {
+      label: 'About',
+      icon: 'i-ix-about',
+      to: '/about'
+    },
+    {
+      label: 'Products',
+      icon: 'i-lucide-box',
+      to: '/products',
+    }
+  ],
+  [
+    {
+      label: 'contacts',
+      icon: 'i-simple-icons-github',
+      to: '/contacts',
+    }
+  ]
+])
+</script>
+
+
